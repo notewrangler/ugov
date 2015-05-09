@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="large-2 columns">.</div>
+	    <div class="large-8 columns">
+
+
+		<p id="notice"><%= notice %></p>
+
+		<h4>
+		  <strong><%= @op_ed.title %></strong>		  
+		</h4>
+
+		<h6>
+		  <strong>Author:</strong>
+		  <%= @op_ed.pundit.name %>
+		</h6>
+
+		<p>		  
+		  <%= @op_ed.content %>
+		</p>
+
+		
+
+		<%= link_to 'Edit', edit_op_ed_path(@op_ed) %> |
+		<%= link_to 'Back', op_eds_path %>
+	   </div>
+  <div class="large-2 columns">.</div>
+</div>    

@@ -1,0 +1,29 @@
+<%= form_for(@op_ed) do |f| %>
+  <% if @op_ed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@op_ed.errors.count, "error") %> prohibited this op_ed from being saved:</h2>
+
+      <ul>
+      <% @op_ed.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :pundit_id %><br>
+    <%= f.number_field :pundit_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

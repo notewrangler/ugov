@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="large-2 columns">.</div>
+  	<div class="large-8 columns">
+
+		<h1>Opinion Leaders</hi>
+
+
+		<% @pundits.each do |pundit| %>
+
+			<h4><%= pundit.name %></h4>
+			<h6>Reputation: <%= pundit.reputation %> Op-Eds Authored: <%= pundit.op_eds.count %> </h6>
+			<div><% if pundit.op_eds.last %>
+			<h6>Most Recent Op-Ed: <%= link_to pundit.op_eds.last.title, pundit.op_eds.last %> posted: <%= time_ago_in_words(pundit.op_eds.last.created_at) %> ago</h6>
+				<% end %>
+			</div>
+
+		<% end %>
+
+  	</div>
+  	<div class="large-2 columns">.</div>
+</div>	

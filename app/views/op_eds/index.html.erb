@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-1 column">.</div>
+    <div class="large-10 columns">
+      <h1>The Op Ed Page</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Author</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @op_eds.each do |op_ed| %>
+            <!-- <div class="panel"> -->
+            <tr>
+              <td><b><%= op_ed.pundit.name %></b></td>
+              <td><%= link_to op_ed.title, op_ed %></td>              
+              <td> posted:<%= link_to time_ago_in_words(op_ed.created_at) + "ago", op_ed %></td>  
+              <td><%= link_to 'Show', op_ed %></td>
+              <td><%= link_to 'Edit', edit_op_ed_path(op_ed) %></td>
+              <td><%= link_to 'Destroy', op_ed, method: :delete, data: { confirm: 'Are you sure?' } %></td>              
+            </tr>
+          <!-- </div> -->
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Op ed', new_op_ed_path %>
+    </div>
+    <div class="large-1 columns">.</div> 
+  </div>
+
+</div>
